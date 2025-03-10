@@ -4,8 +4,8 @@ from src.resource_path import Path
 pygame.init()
 
 # Variables:
-width = 270
-height = 600 
+width = 856
+height = 482 
 window_name = "Block Flip"
 
 bg_colour = (0, 0, 0)
