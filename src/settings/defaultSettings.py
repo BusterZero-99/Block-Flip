@@ -11,5 +11,5 @@ window_name = "Block Flip"
 bg_colour = (0, 0, 0)
 
 font = pygame.font.Font(Path('./assets/fonts/MinecraftRegular-Bmg3.otf'), 32)
-icon = pygame.image.load(Path('./assets/images/icon_file.png'))
-dirt = pygame.image.load(Path('./assets/images/dirt.png'))
+icon = pygame.image.load(Path('./assets/images/icon.png'))
+bg_img = pygame.image.load(Path('./assets/images/sky1.png'))
