@@ -14,8 +14,8 @@ class Main():
         self.bg_colour = ds.bg_colour
 
         self.icon = ds.icon
-        self.dirt = ds.dirt
-        self.background_image = pygame.transform.scale(self.dirt, (64, 64))
+        self.bg_img = ds.bg_img
+        self.background_image = pygame.transform.scale(self.bg_img, (64, 64))
 
         self.font = ds.font
 
