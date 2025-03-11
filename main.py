@@ -14,9 +14,8 @@ class Main():
         self.bg_colour = ds.bg_colour
 
         self.icon = ds.icon
-        self.player_image = pygame.transform.scale(self.icon, (64, 64))
-        self.bg_img = ds.bg_img
-        self.background_image = pygame.transform.scale(self.bg_img, (64, 64))
+        self.player_img = pygame.transform.scale(ds.player_img, (64, 64))
+        self.bg_img = pygame.transform.scale(ds.bg_img, (64, 64))
 
         self.font = ds.font
 
@@ -27,7 +26,7 @@ class Main():
 
         drawBackground(self, BackgroundSprite)
 
-        self.player = Player(self.player_image, (self.width // 2, self.height // 2))
+        self.player = Player(self.player_img, (self.width // 2, self.height // 2))
 
         self.player_group = pygame.sprite.Group()
         self.player_group.add(self.player)
