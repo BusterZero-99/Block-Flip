@@ -1,14 +1,16 @@
 import pygame
 
 def spriteDetect(self, event):
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            x, y = pygame.mouse.get_pos()
-            for sprite in self.bgsprite:
-                if sprite.rect.collidepoint(x, y):
+    '''
+    if event.type == pygame.MOUSEBUTTONDOWN:
+        x, y = pygame.mouse.get_pos()
+        for sprite in self.bgsprite:
+            if sprite.rect.collidepoint(x, y):
 
-                    # Call sprite DIE function:
-                    sprite.dieFunct()
-                    self.bgsprite.remove(sprite)
+                # Call sprite DIE function:
+                sprite.dieFunct()
+                self.bgsprite.remove(sprite)'''
+    pass
 
 def refreshBackground(self, event, drawBackground, BackgroundSprite):
 	if event.type == pygame.KEYDOWN:
