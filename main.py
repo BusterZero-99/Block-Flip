@@ -45,7 +45,7 @@ class Main():
 
                 checkCloseWindow(self, event)
                 spriteDetect(self, event)
-                handlePlayerEvents(self.player, event)
+                handlePlayerEvents(self, self.player, event)
 
                 refreshBackground(self, event, drawBackground, BackgroundSprite)
 
@@ -56,7 +56,7 @@ class Main():
             self.background_group.draw(self.window)
             self.background_group.update()
 
-            self.player_group.draw()
+            self.player_group.draw(self.window)
             self.player_group.update()
 
             # Update window:
