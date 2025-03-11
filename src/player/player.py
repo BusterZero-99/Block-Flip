@@ -22,11 +22,7 @@ class Player (pygame.sprite.Sprite):
     '''def dieFunct(self):
         print(f"Player died at {self.rect}")'''
 
-def handleEvents(player):
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            exit()
-        elif event.type == pygame.MOUSEBUTTONDOWN:
-            if player.rect.collidepoint(event.pos):
-                player.rotate(45)
+def handleEvents(player, event):
+    if event.type == pygame.MOUSEBUTTONDOWN:
+        if player.rect.collidepoint(event.pos):
+            player.rotate(45)
