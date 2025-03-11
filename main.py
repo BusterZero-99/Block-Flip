@@ -1,4 +1,4 @@
-# Pygame boilerplate
+# Block Flip
 
 from src.settings.defaultImports import * 
 
