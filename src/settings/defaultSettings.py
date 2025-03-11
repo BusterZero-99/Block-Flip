@@ -12,4 +12,5 @@ bg_colour = (0, 0, 0)
 
 font = pygame.font.Font(Path('./assets/fonts/MinecraftRegular-Bmg3.otf'), 32)
 icon = pygame.image.load(Path('./assets/images/icon.png'))
+player_img = pygame.image.load(Path('./assets/images/player.png'))
 bg_img = pygame.image.load(Path('./assets/images/sky1.png'))
