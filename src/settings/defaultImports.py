@@ -7,3 +7,5 @@ from src.sprites.textSprite import TextSprite
 from src.scripts.background import drawBackground
 from src.scripts.events import *
 import src.settings.defaultSettings as ds
+
+from src.scripts.updateLoop import updateWindow
