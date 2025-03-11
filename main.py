@@ -14,6 +14,7 @@ class Main():
         self.bg_colour = ds.bg_colour
 
         self.icon = ds.icon
+        self.player_image = pygame.transform.scale(self.icon, (64, 64))
         self.bg_img = ds.bg_img
         self.background_image = pygame.transform.scale(self.bg_img, (64, 64))
 
@@ -25,6 +26,11 @@ class Main():
         pygame.display.set_icon(self.icon)
 
         drawBackground(self, BackgroundSprite)
+
+        self.player = Player(self.player_image, (self.width // 2, self.height // 2))
+
+        self.player_group = pygame.sprite.Group()
+        self.player_group.add(self.player)
 
         # Update window:
         self.update()
@@ -39,6 +45,7 @@ class Main():
 
                 checkCloseWindow(self, event)
                 spriteDetect(self, event)
+                handlePlayerEvents(self.player, event)
 
                 refreshBackground(self, event, drawBackground, BackgroundSprite)
 
@@ -48,6 +55,9 @@ class Main():
             self.background_group.add(self.bgsprite)
             self.background_group.draw(self.window)
             self.background_group.update()
+
+            self.player_group.draw()
+            self.player_group.update()
 
             # Update window:
             pygame.display.update()
