@@ -1,6 +1,19 @@
-# Block Flip
+# 𝔹𝕝𝕠𝕔𝕜 𝔽𝕝𝕚𝕡
 
-from src.settings.defaultImports import * 
+'''
+
+This is a basic game I am developing called "𝔹𝕝𝕠𝕔𝕜 𝔽𝕝𝕚𝕡".
+This is made from 𝚝𝚎𝚛𝚛𝚒𝚋𝚕𝚎 code.
+Add 𝔰𝔲𝔤𝔤𝔢𝔰𝔱𝔦𝔬𝔫𝔰 please. Please add bug issues.
+
+The font used (MinecraftRegular-Bmg3.otf) has been unmodified, and was created by 𝕁𝔻𝔾𝕣𝕒𝕡𝕙𝕚𝕔𝕤.
+It is issued under the ᴘᴜʙʟɪᴄ ᴅᴏᴍᴀɪɴ from fontspace.com
+
+I created the new textures myself.
+
+'''
+
+from src.settings.defaultImports import *
 
 pygame.init()
 
@@ -12,10 +25,12 @@ class Main():
         self.height = ds.height
         self.window_name = ds.window_name
         self.bg_colour = ds.bg_colour
+        self.tile_size = ds.tile_size
 
-        self.icon = ds.icon
-        self.player_img = pygame.transform.scale(ds.player_img, (64, 64))
-        self.bg_img = pygame.transform.scale(ds.bg_img, (64, 64))
+        self.icon = pygame.transform.scale(ds.icon, (self.tile_size, self.tile_size))
+        self.player_img = pygame.transform.scale(ds.player_img, (self.tile_size, self.tile_size))
+        self.bg_img1 = pygame.transform.scale(ds.bg_img1, (self.tile_size, self.tile_size))
+        self.bg_img2 = pygame.transform.scale(ds.bg_img2, (self.tile_size, self.tile_size))
 
         self.font = ds.font
 
@@ -26,7 +41,7 @@ class Main():
 
         drawBackground(self, BackgroundSprite)
 
-        self.player = Player(self.player_img, (self.width // 2, self.height // 2))
+        self.player = Player(self.player_img, (self.width / 2, self.height - self.tile_size * 2))
 
         self.player_group = pygame.sprite.Group()
         self.player_group.add(self.player)
@@ -49,6 +64,7 @@ class Main():
                 refreshBackground(self, event, drawBackground, BackgroundSprite)
 
             updateWindow(self)
+            print("Updated")
 
 if __name__ == "__main__":
     Main()
