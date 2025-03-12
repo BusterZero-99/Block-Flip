@@ -14,7 +14,7 @@ class Player (pygame.sprite.Sprite):
         self.angle = 0
 
     def update(self):
-        pass
+        pass # I don't know what to do here...
 
     def rotate(self, angle):
         self.angle += angle
@@ -27,4 +27,4 @@ class Player (pygame.sprite.Sprite):
 def handlePlayerEvents(self, player, event):
     if event.type == pygame.MOUSEBUTTONDOWN:
         if player.rect.collidepoint(event.pos):
-            player.rotate(45)
+            player.rotate(-90) # Rotates player 90 degrees Clockwise
