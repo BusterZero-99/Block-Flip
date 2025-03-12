@@ -1,5 +1,5 @@
 # Imports:
-import pygame
+import pygame, random
 
 from src.player.player import *
 from src.sprites.backgroundSprite import BackgroundSprite
