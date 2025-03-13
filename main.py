@@ -41,7 +41,7 @@ class Main():
 
         drawBackground(self, BackgroundSprite)
 
-        self.player = Player(self.player_img, (self.width / 2, self.height - self.tile_size * 2))
+        self.player = Player(self.player_img, (self.width / 2 - self.tile_size/2, self.height - self.tile_size * 2))
 
         self.player_group = pygame.sprite.Group()
         self.player_group.add(self.player)
