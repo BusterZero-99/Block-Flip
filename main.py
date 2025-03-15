@@ -41,7 +41,9 @@ class Main():
 
         drawBackground(self, BackgroundSprite)
 
-        self.player = Player(self.player_img, (self.width / 2 - self.tile_size/2, self.height - self.tile_size * 2))
+        drawGround(self, BackgroundSprite)
+
+        self.player = Player(self.player_img, (self.width / 2 - self.tile_size/2, self.height - self.tile_size * 2), self.tile_size, self.ground_group)
 
         self.player_group = pygame.sprite.Group()
         self.player_group.add(self.player)
@@ -59,12 +61,11 @@ class Main():
 
                 checkCloseWindow(self, event)
                 spriteDetect(self, event)
-                handlePlayerEvents(self, self.player, event)
+                handlePlayerEvents(self.player, event)
 
                 refreshBackground(self, event, drawBackground, BackgroundSprite)
 
             updateWindow(self)
-            print("Updated")
 
 if __name__ == "__main__":
     Main()
