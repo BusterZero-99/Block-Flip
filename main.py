@@ -31,6 +31,7 @@ class Main():
         self.player_img = pygame.transform.scale(ds.player_img, (self.tile_size, self.tile_size))
         self.bg_img1 = pygame.transform.scale(ds.bg_img1, (self.tile_size, self.tile_size))
         self.bg_img2 = pygame.transform.scale(ds.bg_img2, (self.tile_size, self.tile_size))
+        self.placeHolder = pygame.transform.scale(ds.placeHolder, (self.tile_size, self.tile_size))
 
         self.font = ds.font
 
