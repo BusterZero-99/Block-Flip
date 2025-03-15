@@ -47,6 +47,7 @@ class Player(pygame.sprite.Sprite):
     def start_move_up(self):
         if self.velocity_y == 0:
             self.moving_up = True
+            self.rotate(-90)
 
 def handlePlayerEvents(player, event):
     if event.type == pygame.MOUSEBUTTONDOWN:
