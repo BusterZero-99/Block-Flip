@@ -9,6 +9,11 @@ def updateWindow(self):
     self.background_group.draw(self.window)
     self.background_group.update()
 
+    self.ground_group.empty()
+    self.ground_group.add(self.gsprite)
+    self.ground_group.draw(self.window)
+    self.ground_group.update()
+
     self.player_group.draw(self.window)
     self.player_group.update()
 
