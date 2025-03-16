@@ -2,7 +2,7 @@
 import pygame, random
 
 from src.player.player import *
-from src.sprites.backgroundSprite import BackgroundSprite
+from src.sprites.basicSprite import BasicSprite
 from src.sprites.textSprite import TextSprite
 from src.scripts.background import drawBackground
 from src.scripts.ground import drawGround
