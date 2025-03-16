@@ -40,9 +40,9 @@ class Main():
         pygame.display.set_caption(self.window_name)
         pygame.display.set_icon(self.icon)
 
-        drawBackground(self, BackgroundSprite)
+        drawBackground(self, BasicSprite)
 
-        drawGround(self, BackgroundSprite)
+        drawGround(self, BasicSprite)
 
         self.player = Player(self.player_img, (self.width / 2 - self.tile_size/2, self.height - self.tile_size * 2), self.tile_size, self.ground_group)
 
@@ -64,7 +64,7 @@ class Main():
                 spriteDetect(self, event)
                 handlePlayerEvents(self.player, event)
 
-                refreshBackground(self, event, drawBackground, BackgroundSprite)
+                refreshBackground(self, event, drawBackground, BasicSprite)
 
             updateWindow(self)
 
