@@ -1,4 +1,5 @@
 import pygame
+import sys
 
 def spriteDetect(self, event):
     '''
@@ -22,4 +23,4 @@ def checkCloseWindow(self, event):
     # Close Python instance when "X" button clicked:
 		if event.type == pygame.QUIT:
 			pygame.quit()
-			quit()
+			sys.exit()
