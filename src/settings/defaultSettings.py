@@ -1,5 +1,6 @@
 import pygame
 from src.resource_path import Path
+from src.scripts.loadSpritesheet import loadSpritesheet
 
 pygame.init()
 
@@ -12,9 +13,10 @@ window_name = "Block Flip"
 
 bg_colour = (0, 0, 0)
 
-font = pygame.font.Font(Path('./assets/fonts/MinecraftRegular-Bmg3.otf'), 32)
-icon = pygame.image.load(Path('./assets/images/icon.png'))
-player_img = pygame.image.load(Path('./assets/images/player.png'))
-bg_img1 = pygame.image.load(Path('./assets/images/sky1.png'))
-bg_img2 = pygame.image.load(Path('./assets/images/sky2.png'))
-placeHolder = pygame.image.load(Path('./assets/images/placeHolder.png'))
+font        = pygame.font.Font(Path('./assets/fonts/MinecraftRegular-Bmg3.otf'), 32)
+icon        = pygame.transform.scale(pygame.image.load(Path('./assets/images/icon.png')),        (tile_size, tile_size))
+player_img  = pygame.transform.scale(pygame.image.load(Path('./assets/images/player.png')),      (tile_size, tile_size))
+placeHolder = pygame.transform.scale(pygame.image.load(Path('./assets/images/placeHolder.png')), (tile_size, tile_size))
+
+uiImgs = loadSpritesheet(Path('./assets/images/uiSpritesheet.png'), 8, 8, tile_size)
+bgImgs = loadSpritesheet(Path('./assets/images/bgSpritesheet.png'), 16, 16, tile_size)
