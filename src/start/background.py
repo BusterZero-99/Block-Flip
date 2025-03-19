@@ -12,7 +12,7 @@ def drawBackground(self, BackgroundSprite):
     for i in range(0, self.width, self.tile_size):
         for j in range(0, self.height, self.tile_size):
 
-            img = random.choice([self.bg_img1, self.bg_img2])
+            img = random.choice([self.bgImgs[0], self.bgImgs[1]])
 
             self.bgsprite.append(BackgroundSprite(img, (i, j),1))
             self.background_group.add(self.bgsprite[k])
