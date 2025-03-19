@@ -1,4 +1,4 @@
-import pygame
+from src.settings.defaultImports import pygame, drawUi
 
 
 def updateWindow(self):
@@ -16,6 +16,12 @@ def updateWindow(self):
 
     self.player_group.draw(self.window)
     self.player_group.update()
+
+    self.ui_group.empty()
+    self.ui_group.add(self.bdsprite)
+    self.ui_group.draw(self.window)
+    self.ui_group.update()
+
 
     # Update window:
     pygame.display.update()
