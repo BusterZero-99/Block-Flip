@@ -22,6 +22,7 @@ class Player(pygame.sprite.Sprite):
         self.jump_start_y = None
 
     def update(self):
+
         if self.moving_up:
             if self.jump_start_y is None:
                 self.jump_start_y = self.rect.y
@@ -40,16 +41,26 @@ class Player(pygame.sprite.Sprite):
             self.jump_start_y = None
 
     def rotate(self, angle):
+
         self.angle += angle
         self.image = pygame.transform.rotate(self.original_image, self.angle)
         self.rect = self.image.get_rect(center = self.rect.center)
 
     def start_move_up(self):
+
         if self.velocity_y == 0:
             self.moving_up = True
             self.rotate(-90)
 
 def handlePlayerEvents(player, event):
+
     if event.type == pygame.MOUSEBUTTONDOWN:
         if player.rect.collidepoint(event.pos):
             player.start_move_up()
+
+def drawPlayer(self, Player):
+
+    self.player = Player(self.player_img, (self.width / 2 - self.tile_size / 2, self.height - self.tile_size * 2), self.tile_size, self.ground_group)
+
+    self.player_group = pygame.sprite.Group()
+    self.player_group.add(self.player)
