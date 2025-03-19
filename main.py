@@ -21,19 +21,8 @@ class Main():
     def __init__(self):
 
         # Change values for different window size, name and icon:
-        self.width = ds.width
-        self.height = ds.height
-        self.window_name = ds.window_name
-        self.bg_colour = ds.bg_colour
-        self.tile_size = ds.tile_size
 
-        self.icon = pygame.transform.scale(ds.icon, (self.tile_size, self.tile_size))
-        self.player_img = pygame.transform.scale(ds.player_img, (self.tile_size, self.tile_size))
-        self.bg_img1 = pygame.transform.scale(ds.bg_img1, (self.tile_size, self.tile_size))
-        self.bg_img2 = pygame.transform.scale(ds.bg_img2, (self.tile_size, self.tile_size))
-        self.placeHolder = pygame.transform.scale(ds.placeHolder, (self.tile_size, self.tile_size))
-
-        self.font = ds.font
+        setValues(self, ds)
 
         # Set window customisation to chosen values:
         self.window = pygame.display.set_mode((self.width, self.height))
@@ -41,13 +30,11 @@ class Main():
         pygame.display.set_icon(self.icon)
 
         drawBackground(self, BasicSprite)
-
         drawGround(self, BasicSprite)
 
-        self.player = Player(self.player_img, (self.width / 2 - self.tile_size/2, self.height - self.tile_size * 2), self.tile_size, self.ground_group)
+        drawUi(self, self.uiImgs, BasicSprite, self.width, self.height)
 
-        self.player_group = pygame.sprite.Group()
-        self.player_group.add(self.player)
+        drawPlayer(self, Player)
 
         # Update window:
         self.update()
