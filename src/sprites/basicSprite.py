@@ -6,7 +6,7 @@ class BasicSprite (pygame.sprite.Sprite):
 
 		self.vector2 = vector2
 
-		# Set Baisc Sprite's image and position using given values:
+		# Set Basic Sprite's image and position using given values:
 		self.image = image
 		self.rect = self.image.get_rect(topleft = vector2)
 
