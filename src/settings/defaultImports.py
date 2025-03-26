@@ -1,5 +1,6 @@
 # Imports:
 import pygame
+import random
 
 import src.settings.defaultSettings as ds
 from src.start.setValues import setValues
@@ -10,6 +11,7 @@ from src.sprites.textSprite import TextSprite
 
 from src.start.background import drawBackground
 from src.start.ground import drawGround
+from src.start.platform import drawPlatform
 from src.start.ui import drawUi
 
 from src.scripts.events import *
