@@ -22,19 +22,26 @@ class Main():
 
         # Change values for different window size, name and icon:
 
-        setValues(self, ds)
+        setValues(self, pygame, ds)
 
         # Set window customisation to chosen values:
         self.window = pygame.display.set_mode((self.width, self.height))
         pygame.display.set_caption(self.window_name)
         pygame.display.set_icon(self.icon)
 
-        drawBackground(self, BasicSprite)
-        drawGround(self, BasicSprite)
+        drawBackground(self, pygame, random, BasicSprite)
+        drawGround(self, pygame, BasicSprite)
 
-        drawUi(self, self.uiImgs, BasicSprite, self.width, self.height)
+        drawPlatform(self, pygame, self.plat, BasicSprite, 2, 4, 4)
+        drawPlatform(self, pygame, self.plat, BasicSprite, 3, 8, 2)
+        drawPlatform(self, pygame, self.plat, BasicSprite, 1, 2, 2)
+        drawPlatform(self, pygame, self.plat, BasicSprite, 3, 1, 6)
+
+        drawUi(self, pygame, self.uiImgs, BasicSprite, self.width, self.height)
 
         drawPlayer(self, Player)
+
+        print("Running...")
 
         # Update window:
         self.update()
@@ -56,4 +63,5 @@ class Main():
             updateWindow(self)
 
 if __name__ == "__main__":
+    print("Starting...")
     Main()
