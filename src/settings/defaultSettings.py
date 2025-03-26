@@ -1,5 +1,5 @@
 import pygame
-from src.resource_path import Path
+from src.scripts.resource_path import Path
 from src.scripts.loadSpritesheet import loadSpritesheet
 
 pygame.init()
