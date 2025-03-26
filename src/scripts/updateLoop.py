@@ -14,6 +14,11 @@ def updateWindow(self):
     self.ground_group.draw(self.window)
     self.ground_group.update()
 
+    self.platform_group.empty()
+    self.platform_group.add(self.psprite)
+    self.platform_group.draw(self.window)
+    self.platform_group.update()
+
     self.player_group.draw(self.window)
     self.player_group.update()
 
