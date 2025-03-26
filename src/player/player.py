@@ -1,10 +1,11 @@
 import pygame
 
 class Player(pygame.sprite.Sprite):
-    def __init__(self, image, vector2, tile_size, platforms):
+    def __init__(self, image, vector2, tile_size, ground, platforms):
         pygame.sprite.Sprite.__init__(self)
 
         self.vector2 = vector2
+        self.ground = ground
         self.platforms = platforms
         self.tile_size = tile_size
 
@@ -35,16 +36,28 @@ class Player(pygame.sprite.Sprite):
         self.rect.y += self.velocity_y
 
         # Check for collision with platforms
-        if pygame.sprite.spritecollideany(self, self.platforms):
-            self.rect.y -= self.velocity_y
-            self.velocity_y = 0
-            self.jump_start_y = None
+        collided_platforms = pygame.sprite.spritecollide(self, self.platforms, False)
+        for platform in collided_platforms:
+            # Allow jumping through the platform but prevent falling through it
+            if self.velocity_y > 0 and self.rect.bottom <= platform.rect.top + self.velocity_y:
+                self.rect.bottom = platform.rect.top
+                self.velocity_y = 0
+                self.jump_start_y = None
+
+        # Check for collision with the ground
+        collided_platforms = pygame.sprite.spritecollide(self, self.ground, False)
+        for platform in collided_platforms:
+            # Allow jumping through the ground but prevent falling through it
+            if self.velocity_y > 0 and self.rect.bottom <= platform.rect.top + self.velocity_y:
+                self.rect.bottom = platform.rect.top
+                self.velocity_y = 0
+                self.jump_start_y = None
 
     def rotate(self, angle):
 
         self.angle += angle
         self.image = pygame.transform.rotate(self.original_image, self.angle)
-        self.rect = self.image.get_rect(center = self.rect.center)
+        self.rect = self.image.get_rect(center=self.rect.center)
 
     def start_move_up(self):
 
@@ -60,7 +73,7 @@ def handlePlayerEvents(player, event):
 
 def drawPlayer(self, Player):
 
-    self.player = Player(self.player_img, (self.width / 2 - self.tile_size / 2, self.height - self.tile_size * 2), self.tile_size, self.ground_group)
+    self.player = Player(self.player_img, (self.width / 2 - self.tile_size / 2, self.height - self.tile_size * 2), self.tile_size, self.ground_group, self.platform_group)
 
     self.player_group = pygame.sprite.Group()
     self.player_group.add(self.player)
