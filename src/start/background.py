@@ -1,7 +1,4 @@
-import pygame
-import random
-
-def drawBackground(self, BackgroundSprite):
+def drawBackground(self, pygame, random, BasicSprite):
 
 	# Create the background:
     self.background_group = pygame.sprite.Group()
@@ -14,7 +11,7 @@ def drawBackground(self, BackgroundSprite):
 
             img = random.choice([self.bgImgs[0], self.bgImgs[1]])
 
-            self.bgsprite.append(BackgroundSprite(img, (i, j),1))
+            self.bgsprite.append(BasicSprite(img, (i, j),1))
             self.background_group.add(self.bgsprite[k])
             k += 1
             self.background_group.draw(self.window)
