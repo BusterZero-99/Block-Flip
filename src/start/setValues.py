@@ -1,4 +1,4 @@
-def setValues(self, ds):
+def setValues(self, pygame, ds):
 
     self.width = ds.width
     self.height = ds.height
@@ -14,3 +14,9 @@ def setValues(self, ds):
     self.bgImgs = ds.bgImgs
 
     self.font = ds.font
+
+    self.plat = 0
+
+
+    self.platform_group = pygame.sprite.Group()
+    self.psprite = []
